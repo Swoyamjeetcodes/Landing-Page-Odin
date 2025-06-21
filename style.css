@@ -16,11 +16,19 @@ a{
     text-decoration: none;
     color: #e5e7e5;
 }
+a:hover{
+    color: gray;
+}
 .headerlogo img{
     height: auto;
     width: 70px;
     padding-top: 10px;
     border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+.headerlogo img:hover{
+    transform: scale(1.05); /* Slight zoom */
+    cursor: pointer;
 }
 header{
     display: flex;
@@ -28,6 +36,14 @@ header{
     align-items: center;
     padding-left: 100px;
     padding-right: 100px;
+}
+.arrow{
+    background-color: #1F2937;
+    padding-left: 130px;
+}
+#arrow{
+    height: 55px;
+    transform: rotateY(180deg);
 }
 .links ul{
     display: flex ;
@@ -43,9 +59,9 @@ header{
     color:#e5e7e5;
 }
 .hero-one{
-    padding-top: 100px;
+    padding-top: 50px;
     padding-left: 100px;
-    padding-bottom: 30px;
+    padding-bottom: 60px;
     gap: 40px;
     margin-bottom: 30px;
     display: flex;
@@ -161,4 +177,7 @@ footer{
     color: #F9FAF8;
     padding: 30px 0;
     font-size: 14px;
+}
+button:hover{
+    color: gray;
 }

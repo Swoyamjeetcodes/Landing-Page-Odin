@@ -7,21 +7,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<audio id="bg-music" loop>
+  <source src="public/audio/same blue.mp3" type="audio/mpeg" />
+  Your browser does not support the audio element.
+</audio>
+
     <!-- Header -->
 
     <header>
         <div class="headerlogo">
-            <img src="public/images/chinatsu.jpg" alt="">
+            <img src="public/images/chinatsu.jpg" alt="Chinatsu" id="music-toggle-img">
         </div>
         <div class="links">
             <ul>
-                <li><a href="#">Manga</a></li>
-                <li><a href="#">Anime</a></li>
-                <li><a href="#">AniList</a></li>
+                <li><a href="https://www.viz.com/shonenjump/chapters/blue-box" target="_blank">Manga</a></li>
+                <li><a href="https://www.netflix.com/in/title/81663323?source=35&fromWatch=true" target="_blank">Anime</a></li>
+                <li><a href="https://anilist.co/anime/170942/Blue-Box/" target="_blank">AniList</a></li>
             </ul>
         </div>
     </header>
-
+    <div class="arrow">
+        <img src="public/images/arrow-dotted.png" alt="" id="arrow">
+    </div>
     <!-- hero one -->
 
     <div class="hero-one">
@@ -32,7 +39,9 @@
         <div class="hero-secondary-text">
             Third-year student Taiki joins badminton club. Despite being an early riser, star player Chinatsu, his crush, arrives first. Living together unexpectedly, Taiki strives to reach Nationals to impress Chinatsu.
         </div>
-        <button>Watch Trailer</button>
+        <a href="https://www.youtube.com/watch?v=tcK9Eghsfq8" target="_blank">
+            <button>Watch Trailer</button>
+        </a>
         </div>
         <div class="box">
             <img src="public/images/blue box.jpg" alt="">
@@ -93,7 +102,9 @@
                 <p class="secondarywatch">Watch now by clicking that button right over there!</p>
             </div>
             <div class="button">
-                <button class="watchnow">Watch Now</button>
+                <a href="https://www.youtube.com/watch?v=tcK9Eghsfq8" target="_blank">
+                    <button class="watchnow">Watch Now</button>
+                </a>
             </div>
         </div>
     </div>
@@ -105,6 +116,23 @@
             <p>Copyright &copy; The Odin Project 2025</p>
         </div>
     </footer>
-    
+  <!-- JavaScript for play/pause toggle -->
+  <script>
+    const audio = document.getElementById('bg-music');
+    const image = document.getElementById('music-toggle-img');
+    let isPlaying = false;
+
+    image.addEventListener('click', () => {
+      if (isPlaying) {
+        audio.pause();
+        image.src = "public/images/chinatsu.jpg"; // replace with paused image if desired
+      } else {
+        audio.play().catch(err => console.log("Playback failed:", err));
+        image.src = "public/images/chinatsu.jpg"; // replace with playing image if desired
+      }
+      isPlaying = !isPlaying;
+    });
+  </script>
+
 </body>
 </html>
